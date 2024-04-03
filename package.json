@@ -1,0 +1,26 @@
+{
+    "name": "mccmanager",
+    "private": true,
+    "version": "0.1.0",
+    "type": "module",
+    "scripts": {
+        "vdev": "vite",
+        "vbuild": "vite build",
+        "preview": "vite preview",
+        "tauri": "tauri",
+        "dev": "tauri dev",
+        "build": "tauri build",
+        "icon": "tauri icon",
+        "iconhelp": "tauri icon --help"
+    },
+    "dependencies": {
+        "@tauri-apps/api": "^1",
+        "less": "^4.2.0",
+        "vue": "^3.3.4"
+    },
+    "devDependencies": {
+        "@tauri-apps/cli": "^1",
+        "@vitejs/plugin-vue": "^5.0.4",
+        "vite": "^5.0.0"
+    }
+}

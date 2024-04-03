@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/png" href="/app-icon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: transparent;
+                --window-radius: 8px;
+            }
+            body{
+                --window-bgc: linear-gradient(to bottom right, #ffcccc, #cc99ff);
+            }
+            body[app-theme="dark"]{
+                --window-bgc: linear-gradient(to top left, #0f0f56, #0d1c31);
+            }
+            #app {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                height: 100%;
+                transform: translate(-50%, -50%);
+                background-image: var(--window-bgc);
+                border-radius: var(--window-radius);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="module" src="/src/main.js"></script>
+        <script>
+            document.addEventListener("contextmenu", (e) => {
+                e.preventDefault();
+            });
+        </script>
+    </body>
+</html>

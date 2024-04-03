@@ -1,0 +1,13 @@
+body {
+    --tb-bgc: rgba(255, 255, 255, 0.4);
+    --tb-bgc-hover: rgba(255, 255, 255, 0.9);
+    --tb-btn-bgc-hover: rgb(237, 237, 237);
+    --title-c: black;
+}
+
+body[app-theme="dark"] {
+    --tb-bgc: rgba(6, 10, 27, 0.4);
+    --tb-bgc-hover: rgba(6, 10, 27, 0.9);
+    --tb-btn-bgc-hover: rgb(14, 18, 38) ;
+    --title-c: white;
+}

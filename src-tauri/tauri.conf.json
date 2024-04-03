@@ -1,0 +1,50 @@
+{
+    "build": {
+        "beforeDevCommand": "npm run vdev",
+        "beforeBuildCommand": "npm run vbuild",
+        "devPath": "http://localhost:1420",
+        "distDir": "../dist"
+    },
+    "package": {
+        "productName": "mccmanager",
+        "version": "0.1.0"
+    },
+    "tauri": {
+        "allowlist": {
+            "all": false,
+            "shell": {
+                "all": false,
+                "open": true
+            },
+            "window": {
+                "startDragging": true
+            }
+        },
+        "windows": [
+            {
+                "title": "MCCManager",
+                "width": 450,
+                "minWidth": 400,
+                "height": 800,
+                "url": "../index.html",
+                "transparent": true,
+                "decorations": false
+            }
+        ],
+        "security": {
+            "csp": null
+        },
+        "bundle": {
+            "active": true,
+            "targets": "all",
+            "identifier": "top.lingyunawa.mccmanager",
+            "icon": [
+                "icons/32x32.png",
+                "icons/128x128.png",
+                "icons/128x128@2x.png",
+                "icons/icon.icns",
+                "icons/icon.ico"
+            ]
+        }
+    }
+}
