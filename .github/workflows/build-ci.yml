@@ -32,4 +32,5 @@ jobs:
         with:
           name: mccmanager-ci
           path: |
-            MCCManager/src-tauri/target/release/bundle
+            D:\a\MCCManager\MCCManager\src-tauri\target\release\bundle
+            D:\a\MCCManager\MCCManager\src-tauri\target\release\mccmanager.exe
