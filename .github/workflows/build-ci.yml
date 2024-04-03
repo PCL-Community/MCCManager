@@ -27,10 +27,24 @@ jobs:
       - name: Build Tauri App
         run: npm run build
         
-      - name: Upload build artifact
+      - name: "Upload build artifact: Windows Installer (msi)"
         uses: actions/upload-artifact@v2
         with:
-          name: mccmanager-ci
+          name: "MCCManager 0.1.0 Windows"
           path: |
-            D:\a\MCCManager\MCCManager\src-tauri\target\release\bundle
+            D:\a\MCCManager\MCCManager\src-tauri\target\release\bundle\msi\mccmanager_0.1.0_x64_en-US.msi
+            
+      - name: "Upload build artifact: Other Installer (exe)"
+        uses: actions/upload-artifact@v2
+        with:
+          name: "MCCManager 0.1.0 Other"
+          path: |
+            D:\a\MCCManager\MCCManager\src-tauri\target\release\bundle\nsis\mccmanager_0.1.0_x64-setup.exe
+
+      - name: "Upload build artifact: Debug exe file"
+        uses: actions/upload-artiface@v2
+        with:
+          name: Debug exe file
+          path: |
             D:\a\MCCManager\MCCManager\src-tauri\target\release\mccmanager.exe
+          
