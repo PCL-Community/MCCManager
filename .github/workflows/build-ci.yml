@@ -11,19 +11,15 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20.11.0'
-
       - name: Install dependencies
         run: npm install
-
       - name: Build Tauri App
         run: npm run build
         
@@ -40,11 +36,9 @@ jobs:
           name: "MCCManager 0.1.0 Other"
           path: |
             D:\a\MCCManager\MCCManager\src-tauri\target\release\bundle\nsis\mccmanager_0.1.0_x64-setup.exe
-
       - name: "Upload build artifact: Debug exe file"
         uses: actions/upload-artifact@v4
         with:
           name: Debug exe file
           path: |
             D:\a\MCCManager\MCCManager\src-tauri\target\release\mccmanager.exe
-          
