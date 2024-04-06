@@ -13,10 +13,14 @@
                 background-color: transparent;
                 --window-radius: 8px;
             }
-            body{
-                --window-bgc: linear-gradient(to bottom right, #ffcccc, #cc99ff);
+            body {
+                --window-bgc: linear-gradient(
+                    to bottom right,
+                    #ffcccc,
+                    #cc99ff
+                );
             }
-            body[app-theme="dark"]{
+            body[app-theme="dark"] {
                 --window-bgc: linear-gradient(to top left, #0f0f56, #0d1c31);
             }
             #app {
@@ -28,6 +32,14 @@
                 transform: translate(-50%, -50%);
                 background-image: var(--window-bgc);
                 border-radius: var(--window-radius);
+            }
+            @keyframes moveingBackground {
+                0% {
+                    background-position: 100% 0;
+                }
+                100% {
+                    background-position: -100% 0;
+                }
             }
         </style>
     </head>
