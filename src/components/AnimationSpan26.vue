@@ -8,14 +8,15 @@
                     align-items: flex-end;
                 "
                 v-for="(char, index) in text">
-                <span
+                <p
                     :key="index"
                     :class="{ whip: animate }"
                     :style="{
-                        'animation-delay': index * 0.05 + 's',
+                        'animation-delay': index * 0.1 + 's',
                         'min-height': char != 'm' && char != 'c' ? 34.4 : 29.6,
+                        'margin': 0
                     }"
-                    >{{ char != " " ? char : "&nbsp;" }}</span
+                    >{{ char != " " ? char : "&nbsp;" }}</p
                 >
             </div>
         </span>
@@ -59,13 +60,19 @@ onMounted(() => {
 
 @keyframes whipIn {
     0% {
-        font-size: 26px;
+        scale: 1;
+    }
+    10%{
+        scale: 0.9;
     }
     50% {
-        font-size: 24px;
+        scale: 1.1;
+    }
+    90%{
+        scale: 0.9;
     }
     100% {
-        font-size: 26px;
+        scale: 1;
     }
 }
 </style>
