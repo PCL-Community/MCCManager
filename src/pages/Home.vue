@@ -1,16 +1,10 @@
 <script setup>
-import LaunchButton from '../components/LaunchButton.vue';
-
 const name = "Home";
-const components = {
-    LaunchButton
-}
 </script>
 
 <template>
     <div id="Home">
         <div id="buttom">
-            <LaunchButton />
         </div>
     </div>
 </template>

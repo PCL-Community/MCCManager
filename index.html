@@ -4,7 +4,6 @@
         <meta charset="UTF-8" />
         <link rel="icon" type="image/png" href="/app-icon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="style.css" />
         <style>
             body {
                 margin: 0;
@@ -12,6 +11,7 @@
                 overflow: hidden;
                 background-color: transparent;
                 --window-radius: 8px;
+                user-select: none;
             }
             body {
                 --window-bgc: linear-gradient(
@@ -21,7 +21,7 @@
                 );
             }
             body[app-theme="dark"] {
-                --window-bgc: linear-gradient(to top left, #0f0f56, #0d1c31);
+                --window-bgc: linear-gradient(to top left, #0f1156, #250f56);
             }
             #app {
                 position: absolute;
@@ -33,12 +33,14 @@
                 background-image: var(--window-bgc);
                 border-radius: var(--window-radius);
             }
-            @keyframes moveingBackground {
+            @keyframes MoveingBackground {
                 0% {
-                    background-position: 100% 0;
+                    background-size: 200% 100%;
+                    background-position: 0% 0;
                 }
                 100% {
-                    background-position: -100% 0;
+                    background-size: 200% 100%;
+                    background-position: -200% 0;
                 }
             }
         </style>

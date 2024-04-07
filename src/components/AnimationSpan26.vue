@@ -14,10 +14,10 @@
                     :style="{
                         'animation-delay': index * 0.1 + 's',
                         'min-height': char != 'm' && char != 'c' ? 34.4 : 29.6,
-                        'margin': 0
-                    }"
-                    >{{ char != " " ? char : "&nbsp;" }}</p
-                >
+                        margin: 0,
+                    }">
+                    {{ char != " " ? char : "&nbsp;" }}
+                </p>
             </div>
         </span>
     </div>
@@ -45,7 +45,7 @@ onMounted(() => {
 .AnimationSpan {
     min-width: 195px;
     min-height: 40.8px;
-    margin-top: 7px;
+    margin-top: 4px;
     margin-bottom: -4px;
 }
 
@@ -55,23 +55,32 @@ onMounted(() => {
 }
 
 .whip {
-    animation: whipIn 0.5s forwards;
+    animation: WhipIn 0.5s forwards;
 }
 
-@keyframes whipIn {
+@keyframes WhipIn {
     0% {
+        opacity: 0;
         scale: 1;
     }
-    10%{
+    10% {
+        opacity: 0.4;
         scale: 0.9;
     }
+    25% {
+        opacity: 1;
+        scale: 0.9625;
+    }
     50% {
+        opacity: 1;
         scale: 1.1;
     }
-    90%{
+    90% {
+        opacity: 1;
         scale: 0.9;
     }
     100% {
+        opacity: 1;
         scale: 1;
     }
 }

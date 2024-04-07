@@ -26,16 +26,16 @@ jobs:
       - name: "Upload build artifact: Windows Installer (msi)"
         uses: actions/upload-artifact@v4
         with:
-          name: "MCCManager 0.1.0 Windows"
+          name: "MCCManager 0.2.2 Windows"
           path: |
-            D:\a\MCCManager\MCCManager\src-tauri\target\release\bundle\msi\mccmanager_0.1.0_x64_en-US.msi
+            D:\a\MCCManager\MCCManager\src-tauri\target\release\bundle\msi\mccmanager_0.2.2_x64_en-US.msi
             
       - name: "Upload build artifact: Other Installer (exe)"
         uses: actions/upload-artifact@v4
         with:
-          name: "MCCManager 0.1.0 Other"
+          name: "MCCManager 0.2.2 Other"
           path: |
-            D:\a\MCCManager\MCCManager\src-tauri\target\release\bundle\nsis\mccmanager_0.1.0_x64-setup.exe
+            D:\a\MCCManager\MCCManager\src-tauri\target\release\bundle\nsis\mccmanager_0.2.2_x64-setup.exe
       - name: "Upload build artifact: Debug exe file"
         uses: actions/upload-artifact@v4
         with:

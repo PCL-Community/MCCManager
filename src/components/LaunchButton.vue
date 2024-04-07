@@ -1,47 +1,61 @@
 <script setup>
 import { reactive, nextTick } from "vue";
 import AnimationSpan26 from "./AnimationSpan26.vue";
+import LaunchIcon from "./LaunchIcon.vue";
+import IconLaunchFinish from "./icons/IconLaunchFinish.vue";
+import IconLaunchFailed from "./icons/IconLaunchFailed.vue";
+
 const name = "LaunchButton";
 const components = {
     AnimationSpan26,
+    LaunchIcon,
+    IconLaunchFinish,
+    IconLaunchFailed,
 };
 
-const text = reactive({
+const vars = reactive({
     main: "启动 MCC 实例",
     sub: "右键管理 >",
+    status: 0,
 });
 
 const bools = reactive({
     showmain: true,
     lock: false,
+    inloading: false,
 });
 
 const startLaunch = () => {
     if (bools.lock == false) {
         bools.lock = true;
+        bools.inloading = true;
         bools.showmain = false;
         nextTick(() => {
-            text.main = "启动中...";
+            vars.status = 1;
+            vars.main = "启动中...";
             bools.showmain = true;
-            text.sub = "不急";
+            vars.sub = "不急";
         });
         setTimeout(() => {
             bools.showmain = false;
             nextTick(() => {
-                text.main = "啊哦 还不支持启动哦";
+                vars.status = 3;
+                vars.main = "啊哦 还不支持启动哦";
                 bools.showmain = true;
-                text.sub = "稍后再试吧";
+                bools.inloading = false;
+                vars.sub = "稍后再试吧";
             });
             setTimeout(() => {
                 bools.showmain = false;
                 nextTick(() => {
-                    text.main = "启动 MCC 实例";
+                vars.status = 0;
+                    vars.main = "启动 MCC 实例";
                     bools.showmain = true;
-                    text.sub = "右键管理 >";
+                    vars.sub = "右键管理 >";
                     bools.lock = false;
                 });
             }, 3000);
-        }, 10000);
+        }, 3000);
     }
 };
 </script>
@@ -49,18 +63,22 @@ const startLaunch = () => {
 <template>
     <div id="LaunchButton">
         <div id="ButtonBorder"></div>
-        <button id="ButtonMain" @click="startLaunch()">
-            <div id="content">
-                <img
-                    src="../assets/MCC_logo_with_edge.png"
-                    width="70"
-                    height="70" />
-                <div id="launchText">
-                    <AnimationSpan26 v-if="bools.showmain" :text="text.main" />
-                    <span id="launchSubTitle">{{ text.sub }}</span>
-                </div>
+        <span
+            id="ButtonMain"
+            @click="startLaunch()"
+            :class="{ running: bools.inloading }">
+            <LaunchIcon v-if="bools.showmain">
+                <span
+                    v-if="vars.status === 0 || vars.status === 1"
+                    id="MCCIcon"></span>
+                <IconLaunchFinish v-if="vars.status === 2" :width="60" :height="60" :color="'var(--icon-finish)'"></IconLaunchFinish>
+                <IconLaunchFailed v-if="vars.status === 3" :width="60" :height="60" :color="'var(--icon-failed)'"></IconLaunchFailed>
+            </LaunchIcon>
+            <div id="launchvars">
+                <AnimationSpan26 v-if="bools.showmain" :text="vars.main" />
+                <span id="launchSubTitle">{{ vars.sub }}</span>
             </div>
-        </button>
+        </span>
     </div>
 </template>
 
@@ -81,7 +99,7 @@ div#LaunchButton {
         border-radius: 4px;
         box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.25);
     }
-    button#ButtonMain {
+    span#ButtonMain {
         width: calc(100% - 10px);
         height: calc(100% - 10px);
         position: absolute;
@@ -95,45 +113,53 @@ div#LaunchButton {
         justify-content: center;
         align-items: center;
         background-image: linear-gradient(
-            to right,
-            rgb(228, 178, 223) 0%,
-            rgb(217, 167, 231) 50%,
-            rgb(187, 141, 229) 100%
+            45deg,
+            var(--lgc-1) 0%,
+            var(--lgc-1) 31.1%,
+            var(--lgc-2) 72.1%,
+            var(--lgc-2) 100%
         );
-        background-size: 200% 100%;
-        body[app-theme="dark"] & {
-            background-image: linear-gradient(
-                to right,
-                rgb(16, 25, 71) 0%,
-                rgb(16, 23, 89) 50%,
-                rgb(7, 8, 82) 100%
-            );
-        }
         &:active {
             scale: 0.97;
         }
-        div#content {
-            backdrop-filter: blur(1.5px);
-            display: flex;
-            img {
-                margin-right: 20px;
+        div#launchvars {
+            z-index: 2;
+            display: block;
+            text-align: left;
+            position: relative;
+            margin-left: 20px;
+            transform: translateY(-4px);
+            span#launchTitle {
+                font: normal 26px Arial;
+                color: var(--title-c);
             }
-            div#launchText {
-                display: block;
-                text-align: left;
-                span#launchTitle {
-                    font: normal 26px Arial;
-                    color: var(--title-c);
-                }
-                span#launchSubTitle {
-                    font: normal 13px Arial;
-                    color: var(--title-c);
-                }
+            span#launchSubTitle {
+                font: normal 13px Arial;
+                color: var(--title-c);
             }
         }
         &.running {
-            animation: moveingBackground 3s linear infinite;
+            animation: MoveingBackground 3s linear infinite;
+            background-image: linear-gradient(
+                45deg,
+                var(--lgc-1) 0%,
+                var(--lgc-1) 15.55%,
+                var(--lgc-2) 36.05%,
+                var(--lgc-2) 50%,
+                var(--lgc-2) 65.55%,
+                var(--lgc-1) 86.05%,
+                var(--lgc-1) 100%,
+                var(--lgc-1) 0%
+            );
         }
     }
+}
+
+span#MCCIcon {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    background-image: url("../assets/MCC_logo_with_edge.png");
+    background-size: 70px 70px;
 }
 </style>

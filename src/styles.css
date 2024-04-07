@@ -4,6 +4,10 @@
     --tb-btn-bgc-hover: rgb(237, 237, 237);
     --title-c: black;
     --main-bg: white;
+    --lgc-1: rgb(36, 200, 219);
+    --lgc-2: rgb(255, 193, 49);
+    --icon-finish: rgb(60, 255, 0);
+    --icon-failed: rgb(255, 34, 0)
 }
 
 :root:has(body[app-theme="dark"]) {
@@ -12,6 +16,8 @@
     --tb-btn-bgc-hover: rgb(14, 18, 38);
     --title-c: white;
     --main-bg: rgb(6, 6, 39);
+    --lgc-1: rgb(109, 36, 219);
+    --lgc-2: rgb(219, 103, 36);
 }
 
 body {

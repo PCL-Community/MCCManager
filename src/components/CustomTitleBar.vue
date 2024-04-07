@@ -21,11 +21,15 @@ const handleClose = () => {
 </script>
 
 <template>
-    <div
-        id="TitleBar"
-        data-tauri-drag-region>
+    <div id="TitleBar" data-tauri-drag-region>
         <div class="leftInfo">
-            <span style="width: 30px; height: 30px; background-image: url('app-icon.png'); background-size: 30px 30px;"></span>
+            <span
+                style="
+                    width: 30px;
+                    height: 30px;
+                    background-image: url('app-icon.png');
+                    background-size: 30px 30px;
+                "></span>
             <span class="title">MCCManager</span>
         </div>
         <div class="controlBtns">

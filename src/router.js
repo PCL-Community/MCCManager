@@ -13,6 +13,12 @@ const router = createRouter({
             component: Home,
         },
         {
+            // For Pure Vue-Viewing
+            path: "/",
+            name: "Home-Root",
+            component: Home,
+        },
+        {
             path: "/Home",
             name: "Home",
             component: Home,

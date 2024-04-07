@@ -1,9 +1,11 @@
 <script setup>
 import { RouterView } from "vue-router";
 import CustomTitleBar from "./components/CustomTitleBar.vue";
+import LaunchButton from "./components/LaunchButton.vue";
 
 const components = {
     CustomTitleBar,
+    LaunchButton,
 };
 </script>
 
@@ -13,6 +15,9 @@ const components = {
         <main id="container">
             <RouterView />
         </main>
+        <div id="buttomBtn">
+            <LaunchButton />
+        </div>
     </div>
 </template>
 
@@ -25,11 +30,16 @@ div#container {
     grid-template-rows: 50px 1fr;
     grid-template-areas: "TitleBar" "Main";
     height: 100%;
-    div#TitleBar{
+    div#TitleBar {
         grid-area: TitleBar;
     }
-    main#container{
+    main#container {
         grid-area: Main;
+    }
+    div#buttomBtn {
+        width: 451.2px;
+        display: flex;
+        justify-content: center;
     }
 }
 </style>

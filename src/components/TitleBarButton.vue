@@ -4,15 +4,16 @@ const emit = defineEmits(["click"])
 </script>
 
 <template>
-    <button class="button" @click="$emit('click')">
+    <span class="button" @click="$emit('click')">
         <slot name="icon">
             <div class="icon"></div>
         </slot>
-    </button>
+    </span>
 </template>
 
 <style scoped lang="less">
-.button {
+span.button {
+    cursor: pointer;
     width: 50px;
     height: 35px;
     background-color: transparent;
