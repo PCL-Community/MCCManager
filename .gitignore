@@ -23,5 +23,18 @@ dist-ssr
 *.sln
 *.sw?
 
+# 暂时禁用
+src/Includes/MCC.js
+
 # Helping Scripts
 z*.bat
+
+# Other files
+other/
+
+# TS Files (Ingore because this project is based on JS)
+*.d.ts
+
+# DrawIO Files
+*.dio
+*.drawio

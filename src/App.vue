@@ -40,6 +40,12 @@ div#container {
         width: 451.2px;
         display: flex;
         justify-content: center;
+        transform: translateY(260px);
+        animation: LaunchButtonFadein 0.5s forwards;
+        &.fadeOut {
+            transition: transform 0.5s ease-in-out;
+            animation: LaunchButtonFadeout 0.5s forwards;
+        }
     }
 }
 </style>
