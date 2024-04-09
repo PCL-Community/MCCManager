@@ -3,7 +3,6 @@ import { invoke } from "@tauri-apps/api";
 import TitleBarButton from "./TitleBarButton.vue";
 import IconClose from "./icons/IconClose.vue";
 import IconMinimize from "./icons/IconMinimize.vue";
-import { reactive } from "vue";
 
 const name = "CustomTitleBar";
 const components = {

@@ -7,7 +7,7 @@
     },
     "package": {
         "productName": "mccmanager",
-        "version": "0.2.3"
+        "version": "0.3.0"
     },
     "tauri": {
         "allowlist": {
@@ -24,7 +24,7 @@
             {
                 "title": "MCCManager",
                 "width": 450,
-                "minWidth": 400,
+                "minWidth": 450,
                 "height": 800,
                 "url": "../index.html",
                 "transparent": true,

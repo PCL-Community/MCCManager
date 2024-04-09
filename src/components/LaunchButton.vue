@@ -1,11 +1,12 @@
 <script setup>
-import { reactive, nextTick } from "vue";
+import { reactive, nextTick, watchEffect } from "vue";
+// Comps
 import AnimationSpan26 from "./AnimationSpan26.vue";
 import LaunchIcon from "./LaunchIcon.vue";
 import IconLaunchFinish from "./icons/IconLaunchFinish.vue";
 import IconLaunchFailed from "./icons/IconLaunchFailed.vue";
+// Stores
 
-const name = "LaunchButton";
 const components = {
     AnimationSpan26,
     LaunchIcon,
@@ -16,7 +17,7 @@ const components = {
 const vars = reactive({
     main: "启动 MCC 实例",
     sub: "右键管理 >",
-    status: 0,
+    state: 0,
 });
 
 const bools = reactive({
@@ -31,7 +32,7 @@ const startLaunch = () => {
         bools.inloading = true;
         bools.showmain = false;
         nextTick(() => {
-            vars.status = 1;
+            vars.state = 1;
             vars.main = "启动中...";
             bools.showmain = true;
             vars.sub = "不急";
@@ -39,7 +40,7 @@ const startLaunch = () => {
         setTimeout(() => {
             bools.showmain = false;
             nextTick(() => {
-                vars.status = 3;
+                vars.state = 3;
                 vars.main = "啊哦 还不支持启动哦";
                 bools.showmain = true;
                 bools.inloading = false;
@@ -48,7 +49,7 @@ const startLaunch = () => {
             setTimeout(() => {
                 bools.showmain = false;
                 nextTick(() => {
-                vars.status = 0;
+                    vars.state = 0;
                     vars.main = "启动 MCC 实例";
                     bools.showmain = true;
                     vars.sub = "右键管理 >";
@@ -58,6 +59,10 @@ const startLaunch = () => {
         }, 3000);
     }
 };
+
+watchEffect(() => {
+    localStorage.setItem("data_335bff7c_launchBtnLock", bools.lock);
+});
 </script>
 
 <template>
@@ -69,10 +74,18 @@ const startLaunch = () => {
             :class="{ running: bools.inloading }">
             <LaunchIcon v-if="bools.showmain">
                 <span
-                    v-if="vars.status === 0 || vars.status === 1"
+                    v-if="vars.state === 0 || vars.state === 1"
                     id="MCCIcon"></span>
-                <IconLaunchFinish v-if="vars.status === 2" :width="60" :height="60" :color="'var(--icon-finish)'"></IconLaunchFinish>
-                <IconLaunchFailed v-if="vars.status === 3" :width="60" :height="60" :color="'var(--icon-failed)'"></IconLaunchFailed>
+                <IconLaunchFinish
+                    v-if="vars.state === 2"
+                    :width="60"
+                    :height="60"
+                    :color="'var(--icon-finish)'"></IconLaunchFinish>
+                <IconLaunchFailed
+                    v-if="vars.state === 3"
+                    :width="60"
+                    :height="60"
+                    :color="'var(--icon-failed)'"></IconLaunchFailed>
             </LaunchIcon>
             <div id="launchvars">
                 <AnimationSpan26 v-if="bools.showmain" :text="vars.main" />

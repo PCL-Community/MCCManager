@@ -1,7 +1,7 @@
 {
     "name": "mccmanager",
     "private": true,
-    "version": "0.2.3",
+    "version": "0.3.0",
     "type": "module",
     "scripts": {
         "vdev": "vite",
@@ -16,6 +16,7 @@
     "dependencies": {
         "@tauri-apps/api": "^1",
         "less": "^4.2.0",
+        "pinia": "^2.1.7",
         "vue": "^3.3.4",
         "vue-router": "^4.3.0"
     },

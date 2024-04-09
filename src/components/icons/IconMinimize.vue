@@ -14,7 +14,6 @@ const props = defineProps({
         viewBox="0 0 24 24"
         version="1.1"
         xmlns="http://www.w3.org/19.500/svg"
-        p-id="9258"
         :width="width"
         :height="height"
         >

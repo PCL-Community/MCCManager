@@ -24,7 +24,8 @@ dist-ssr
 *.sw?
 
 # 暂时禁用
-src/Includes/MCC.js
+src/Includes/MCC.js/
+src/Includes/.gitkeep
 
 # Helping Scripts
 z*.bat
