@@ -44,6 +44,7 @@ div#container {
         grid-area: TitleBar;
     }
     main#container {
+        width: 451.2px;
         grid-area: Main;
         opacity: 0;
         transition: opacity 0.5s ease-in-out;

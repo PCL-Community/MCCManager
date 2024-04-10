@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { invoke } from "@tauri-apps/api";
 
 // Components
 import Home from "./pages/Home.vue";
@@ -32,9 +33,10 @@ const router = createRouter({
     ],
 });
 
-const homeList = ["/", "/index.html", "Home"];
+const homeList = ["/", "/index.html", "/Home"];
+const enlargeList = ["/Settings"];
 
-router.beforeEach((to, _from, next) => {
+router.beforeEach((to, from, next) => {
     const ctn = document.querySelector("main#container");
     const lb = document.querySelector("div#buttomBtn");
     ctn.classList.add("fadeOut");
@@ -43,6 +45,12 @@ router.beforeEach((to, _from, next) => {
         setTimeout(() => {
             lb.style.transform = "translateY(260px)";
         }, 500);
+    }
+    if (enlargeList.includes(to.fullPath)) {
+        invoke("enlargewindow");
+    }
+    if (enlargeList.includes(from.fullPath)) {
+        invoke("shrinkwindow");
     }
     setTimeout(() => {
         next();

@@ -1,8 +1,5 @@
 <script setup>
-import router from '../router';
-
-const name = "Settings"
+const name = "Settings";
 </script>
 
-<template>
-</template>
+<template></template>
