@@ -1,5 +1,6 @@
 <script setup>
 // Modules
+import { reactive } from "vue";
 import router from "../router";
 import packageJson from "../../package.json";
 // Comps
@@ -14,6 +15,14 @@ import IconLang from "../components/icons/IconLang.vue";
 import IconInsider from "../components/icons/IconInsider.vue";
 import IconDonate from "../components/icons/IconDonate.vue";
 import IconAbout from "../components/icons/IconAbout.vue";
+// SubPages
+import PageSupport from "./settings/1Support.vue";
+import PageProfile from "./settings/2Profile.vue";
+// import PageCore from "./settings/3Core.vue";
+// import PageLang from "./settings/4Lang.vue";
+// import PageInsider from "./settings/5Insider.vue";
+// import PageDonate from "./settings/6Donate.vue";
+// import PageAbout from "./settings/7About.vue";
 
 const name = "Settings";
 const components = {
@@ -22,16 +31,38 @@ const components = {
     SettingsItemButton,
     // Icons
     IconInfo,
-    IconCore,
     IconProfile,
+    IconCore,
     IconLang,
     IconInsider,
     IconDonate,
     IconAbout,
+    // SubPages
+    PageSupport,
+    PageProfile,
+    // PageCore,
+    // PageLang,
+    // PageInsider,
+    // PageDonate,
+    // PageAbout,
 };
+
+const settings = reactive({
+    spId: 0,
+    sclass: "",
+});
 
 const handleBackToHome = () => {
     router.push("/");
+};
+
+const handleChangeSettingPage = (newSpId) => {
+    if (settings.spId == newSpId) return;
+    settings.sclass = "fadeOut";
+    setTimeout(() => {
+        settings.spId = newSpId;
+        settings.sclass = "";
+    }, 200);
 };
 </script>
 
@@ -50,7 +81,7 @@ const handleBackToHome = () => {
             <br />
             <div id="sLMain">
                 <SettingsItemGroup title="基本">
-                    <SettingsItemButton>
+                    <SettingsItemButton @click="handleChangeSettingPage(1)">
                         <template #icon>
                             <IconInfo
                                 :width="22"
@@ -61,7 +92,7 @@ const handleBackToHome = () => {
                     </SettingsItemButton>
                 </SettingsItemGroup>
                 <SettingsItemGroup title="游戏">
-                    <SettingsItemButton>
+                    <SettingsItemButton @click="handleChangeSettingPage(2)">
                         <template #icon>
                             <IconProfile
                                 :width="22"
@@ -70,7 +101,7 @@ const handleBackToHome = () => {
                         </template>
                         账户与档案
                     </SettingsItemButton>
-                    <SettingsItemButton>
+                    <SettingsItemButton @click="handleChangeSettingPage(3)">
                         <template #icon>
                             <IconCore
                                 :width="22"
@@ -81,7 +112,7 @@ const handleBackToHome = () => {
                     </SettingsItemButton>
                 </SettingsItemGroup>
                 <SettingsItemGroup title="个性化">
-                    <SettingsItemButton>
+                    <SettingsItemButton @click="handleChangeSettingPage(4)">
                         <template #icon>
                             <IconLang
                                 :width="22"
@@ -92,7 +123,7 @@ const handleBackToHome = () => {
                     </SettingsItemButton>
                 </SettingsItemGroup>
                 <SettingsItemGroup title="更多">
-                    <SettingsItemButton>
+                    <SettingsItemButton @click="handleChangeSettingPage(5)">
                         <template #icon>
                             <IconInsider
                                 :width="22"
@@ -101,7 +132,7 @@ const handleBackToHome = () => {
                         </template>
                         预览体验计划
                     </SettingsItemButton>
-                    <SettingsItemButton>
+                    <SettingsItemButton @click="handleChangeSettingPage(6)">
                         <template #icon>
                             <IconDonate
                                 :width="22"
@@ -110,7 +141,7 @@ const handleBackToHome = () => {
                         </template>
                         赞助者计划
                     </SettingsItemButton>
-                    <SettingsItemButton>
+                    <SettingsItemButton @click="handleChangeSettingPage(7)">
                         <template #icon>
                             <IconAbout
                                 :width="21"
@@ -122,7 +153,15 @@ const handleBackToHome = () => {
                 </SettingsItemGroup>
             </div>
         </div>
-        <div id="SettingsMain"></div>
+        <div id="SettingsMain">
+            <PageSupport v-if="settings.spId === 1" :class="settings.sclass" />
+            <PageProfile v-if="settings.spId === 2" :class="settings.sclass" />
+            <!-- <PageCore v-if="settings.spId === 3" :class="settings.sclass" /> -->
+            <!-- <PageLang v-if="settings.spId === 4" :class="settings.sclass" /> -->
+            <!-- <PageInsider v-if="settings.spId === 5" :class="settings.sclass" /> -->
+            <!-- <PageDonate v-if="settings.spId === 6" :class="settings.sclass" /> -->
+            <!-- <PageAbout v-if="settings.spId === 7" :class="settings.sclass" /> -->
+        </div>
     </div>
 </template>
 
@@ -165,6 +204,7 @@ div#Settings {
     }
     div#SettingsMain {
         grid-area: main;
+        overflow: hidden;
     }
 }
 </style>

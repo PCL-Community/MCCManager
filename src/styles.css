@@ -16,6 +16,8 @@
     --si-btn-bgc: rgba(255, 255, 255, 0.8);
     --sib-bg: rgb(237, 237, 238, 0.8);
     --sib-bg2: rgb(247, 247, 248, 0.8);
+    --sp1-card-bgc: rgba(255, 255, 255, 0.6);
+    --sp1-card-bdc: rgba(0, 0, 0, 0.2);
 }
 
 :root:has(body[app-theme="dark"]) {
@@ -34,6 +36,8 @@
     --si-btn-bgc: rgba(6, 6, 39, 0.8);
     --sib-bg: rgb(42, 42, 44, 0.8);
     --sib-bg2: rgb(26, 26, 26, 0.8);
+    --sp1-card-bgc: rgba(6, 6, 39, 0.6);
+    --sp1-card-bdc: rgba(0, 0, 0, 0.2);
 }
 
 body {
