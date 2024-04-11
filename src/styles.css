@@ -11,6 +11,11 @@
     --border-c: rgb(215, 215, 217);
     --mbb-bg: rgb(207, 207, 208);
     --mbb-bg2: rgb(217, 217, 218);
+    --p-s-bg: rgb(255, 255, 255, 0.1);
+    --slb-bgc-hover: rgba(237, 237, 237, 0.4);
+    --si-btn-bgc: rgba(255, 255, 255, 0.8);
+    --sib-bg: rgb(237, 237, 238, 0.8);
+    --sib-bg2: rgb(247, 247, 248, 0.8);
 }
 
 :root:has(body[app-theme="dark"]) {
@@ -24,6 +29,11 @@
     --border-c: rgb(12, 12, 74);
     --mbb-bg: rgb(62, 62, 64);
     --mbb-bg2: rgb(46, 46, 46);
+    --p-s-bg: rgb(0, 0, 0, 0.1);
+    --slb-bgc-hover: rgba(14, 18, 38, 0.4);
+    --si-btn-bgc: rgba(6, 6, 39, 0.8);
+    --sib-bg: rgb(42, 42, 44, 0.8);
+    --sib-bg2: rgb(26, 26, 26, 0.8);
 }
 
 body {

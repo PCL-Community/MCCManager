@@ -9,7 +9,6 @@ const props = defineProps({
 
 <template>
     <svg
-        t="1712136806862"
         class="icon"
         viewBox="0 0 24 24"
         version="1.1"

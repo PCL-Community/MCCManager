@@ -1,6 +1,6 @@
 [package]
 name = "mccmanager"
-version = "0.3.1"
+version = "0.3.2"
 description = "A management application for Minecraft Console Client"
 authors = ["LingyunAwA"]
 edition = "2021"

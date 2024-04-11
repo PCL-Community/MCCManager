@@ -105,7 +105,7 @@ div#Home {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    width: calc(100% - 16px);
+    width: calc(451.2px - 16px);
     height: calc(100% - 16px);
     padding: 8px;
     div#buttom {
@@ -118,7 +118,7 @@ div#Home {
 }
 
 div#Menubar {
-    width: calc(100% - 16px);
+    width: 420px;
     height: 55px;
     position: relative;
     div#MenubarBorder {
@@ -134,7 +134,7 @@ div#Menubar {
         position: absolute;
         top: 0;
         left: 0;
-        gap: 0 5px;
+        gap: 0 6.5px;
         width: calc(100% - 10px);
         height: calc(100% - 10px);
         padding: 5px;

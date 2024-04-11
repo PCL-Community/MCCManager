@@ -29,7 +29,7 @@ div#MenubarButton {
         border-radius: 6px;
         cursor: pointer;
         gap: 0 25px;
-        padding: 0 18px 0 13px;
+        padding: 0 17px 0 13px;
     }
     &:hover {
         background-color: var(--mbb-bg);

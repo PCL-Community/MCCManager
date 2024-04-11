@@ -46,12 +46,14 @@ router.beforeEach((to, from, next) => {
             lb.style.transform = "translateY(260px)";
         }, 500);
     }
-    if (enlargeList.includes(to.fullPath)) {
-        invoke("enlargewindow");
-    }
-    if (enlargeList.includes(from.fullPath)) {
-        invoke("shrinkwindow");
-    }
+    setTimeout(() => {
+        if (enlargeList.includes(to.fullPath)) {
+            invoke("enlargewindow");
+        }
+        if (enlargeList.includes(from.fullPath)) {
+            invoke("shrinkwindow");
+        }
+    }, 100);
     setTimeout(() => {
         next();
     }, 700);

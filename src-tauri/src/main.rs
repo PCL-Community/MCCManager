@@ -25,9 +25,9 @@ async fn enlargewindow(window: tauri::Window) {
     let size = window.inner_size().expect("Failed to get window size");
     let start_width = size.width;
     let start_height = size.height;
-    let target_width = size.width * 3;
+    let target_width = 1689;
     let target_height = size.height;
-    let duration = Duration::from_millis(50);
+    let duration = Duration::from_millis(100);
     let steps = 50;
     for i in 1..=steps {
         let current_width = start_width + ((target_width - start_width) * i / steps);
@@ -49,7 +49,7 @@ async fn shrinkwindow(window: tauri::Window) {
     let size = window.inner_size().expect("Failed to get window size");
     let start_width = size.width;
     let start_height = size.height;
-    let target_width = size.width / 3;
+    let target_width = 563;
     let target_height = size.height;
     let duration = Duration::from_millis(100);
     let steps = 50;
