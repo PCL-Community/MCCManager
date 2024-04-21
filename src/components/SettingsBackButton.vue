@@ -1,15 +1,15 @@
 <script setup>
-import IconBackArrow from "./icons/IconBackArrow.vue";
+import IconArrowLeft from "./icons/IconArrowLeft.vue";
 
 const name = "SettingsBackButton";
 const components = {
-    IconBackArrow,
+    IconArrowLeft,
 };
 </script>
 
 <template>
     <div class="SettingsBackButton">
-        <IconBackArrow :width="25" :height="25" color="var(--title-c)" />
+        <IconArrowLeft :width="25" :height="25" color="var(--title-c)" />
     </div>
 </template>
 

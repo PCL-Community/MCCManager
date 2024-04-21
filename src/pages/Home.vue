@@ -1,5 +1,6 @@
 <script setup>
 import { reactive } from "vue";
+import { handleOpenUrl } from "../Includes/publicFunc.js";
 // Comps
 import MenubarButton from "../components/MenubarButton.vue";
 import MenubarSquareButton from "../components/MenubarSquareButton.vue";
@@ -25,8 +26,8 @@ const components = {
 };
 
 const theme = reactive({
-    value: 0,
-    text: "亮色主题",
+    value: localStorage.getItem("data-7dff8ab4-theme") || 0,
+    text: localStorage.getItem("data-7dff8ab4-theme") == 0 ? "亮色主题" : "暗色主题",
 });
 
 const handleChangeTheme = () => {
@@ -35,10 +36,12 @@ const handleChangeTheme = () => {
         case 0:
             document.body.removeAttribute("app-theme");
             theme.text = "亮色主题";
+            localStorage.setItem("data-7dff8ab4-theme", 0)
             break;
         case 1:
             document.body.setAttribute("app-theme", "dark");
             theme.text = "暗色主题";
+            localStorage.setItem("data-7dff8ab4-theme", 1)
             break;
     }
 };
@@ -86,7 +89,7 @@ const handleChangePage = (page) => {
                         </template>
                         <span>实例列表</span>
                     </MenubarButton>
-                    <MenubarSquareButton>
+                    <MenubarSquareButton @click="handleOpenUrl('https://afdian.net/@lingyunawa')">
                         <IconDonate
                             :width="32"
                             :height="32"

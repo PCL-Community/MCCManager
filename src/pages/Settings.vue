@@ -18,10 +18,10 @@ import IconAbout from "../components/icons/IconAbout.vue";
 // SubPages
 import PageSupport from "./settings/1Support.vue";
 import PageProfile from "./settings/2Profile.vue";
-// import PageCore from "./settings/3Core.vue";
-// import PageLang from "./settings/4Lang.vue";
+import PageCore from "./settings/3Core.vue";
+import PageLang from "./settings/4Lang.vue";
 // import PageInsider from "./settings/5Insider.vue";
-// import PageDonate from "./settings/6Donate.vue";
+import PageDonate from "./settings/6Donate.vue";
 // import PageAbout from "./settings/7About.vue";
 
 const name = "Settings";
@@ -40,7 +40,7 @@ const components = {
     // SubPages
     PageSupport,
     PageProfile,
-    // PageCore,
+    PageCore,
     // PageLang,
     // PageInsider,
     // PageDonate,
@@ -156,10 +156,10 @@ const handleChangeSettingPage = (newSpId) => {
         <div id="SettingsMain">
             <PageSupport v-if="settings.spId === 1" :class="settings.sclass" />
             <PageProfile v-if="settings.spId === 2" :class="settings.sclass" />
-            <!-- <PageCore v-if="settings.spId === 3" :class="settings.sclass" /> -->
-            <!-- <PageLang v-if="settings.spId === 4" :class="settings.sclass" /> -->
+            <PageCore v-if="settings.spId === 3" :class="settings.sclass" />
+            <PageLang v-if="settings.spId === 4" :class="settings.sclass" />
             <!-- <PageInsider v-if="settings.spId === 5" :class="settings.sclass" /> -->
-            <!-- <PageDonate v-if="settings.spId === 6" :class="settings.sclass" /> -->
+            <PageDonate v-if="settings.spId === 6" :class="settings.sclass" />
             <!-- <PageAbout v-if="settings.spId === 7" :class="settings.sclass" /> -->
         </div>
     </div>
@@ -205,6 +205,7 @@ div#Settings {
     div#SettingsMain {
         grid-area: main;
         overflow: hidden;
+        padding-top: 73px;
     }
 }
 </style>

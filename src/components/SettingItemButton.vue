@@ -1,27 +1,22 @@
 <script setup>
-import IconArrowRight from './icons/IconArrowRight.vue';
-
-const name = "SettingsItemButton";
-const components = {
-    IconArrowRight,
-};
+const name = "SettingItemButton";
 </script>
 
 <template>
-    <div class="SettingsItemButton">
-        <slot name="icon"></slot>
-        <span class="SettingsItemButtonText">
+    <div class="SettingItemButton">
+        <slot name="iconbefore"></slot>
+        <span class="SettingItemButtonText">
             <slot></slot>
         </span>
-        <div class="SettingsItemButtonRight">
-            <IconArrowRight :width="13" :height="13" color="var(--title-c)" />
-        </div>
+        <span class="SettingItemButtonRight">
+            <slot name="iconafter"></slot>
+        </span>
     </div>
 </template>
 
 <style scoped lang="less">
-div.SettingsItemButton {
-    width: calc(100% - 20px);
+div.SettingItemButton {
+    width: calc(100% - 30px);
     height: 40px;
     display: flex;
     justify-content: right;
@@ -39,14 +34,19 @@ div.SettingsItemButton {
     &:active {
         background-color: var(--sib-bg2);
     }
-    span.SettingsItemButtonText {
+    &[disabled] {
+        background-color: var(--sib-bg-disable);
+        cursor: not-allowed;
+    }
+    span.SettingItemButtonText {
         color: var(--title-c);
         font-size: 0.9em;
         transform: translateY(-1px);
     }
-    div.SettingsItemButtonRight {
+    span.SettingItemButtonRight {
         margin-left: auto;
         opacity: 0.4;
+        transform: translateY(2px);
     }
 }
 </style>

@@ -1,31 +1,23 @@
 <script setup>
 import TitleText from "../../components/TitleText.vue";
 import NoteText from "../../components/NoteText.vue";
-import SettingItemButton from "../../components/SettingItemButton.vue";
 
-const name = "PageProfile";
+const name = "PageCore";
 const components = {
     TitleText,
     NoteText,
-    SettingItemButton,
 };
 </script>
 
 <template>
-    <div id="PageProfile">
-        <TitleText>App 账户</TitleText>
-        <NoteText>咕？还没有这个东东呢！</NoteText>
-        <br />
-        <TitleText>MCC 实例档案</TitleText>
-        <SettingItemButton disabled>
-            新增档案
-        </SettingItemButton>
-        <NoteText>当前版本的 MCCManager 尚不支持创建与管理 MCC 实例档案</NoteText>
+    <div id="PageCore">
+        <NoteText>当前版本的 MCCManager 尚不支持此设置</NoteText>
+        <TitleText>核心管理</TitleText>
     </div>
 </template>
 
 <style scoped lang="less">
-div#PageProfile {
+div#PageCore {
     display: flex;
     flex-direction: column;
     justify-content: center;

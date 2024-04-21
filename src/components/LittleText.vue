@@ -1,18 +1,18 @@
 <script setup>
-const name = "TitleText";
+const name = "LittleText";
 </script>
 
 <template>
-    <span class="TitleText">
+    <span class="NoteText">
         <slot></slot>
     </span>
 </template>
 
 <style scoped lang="less">
-span.TitleText {
-    font-size: 17px;
-    font-weight: bold;
-    margin: 15px 0;
+span.NoteText {
+    opacity: 0.7;
+    font-size: 12px;
+    margin: 2px 0;
     width: 100%;
 }
 </style>

@@ -1,31 +1,27 @@
 <script setup>
 import TitleText from "../../components/TitleText.vue";
 import NoteText from "../../components/NoteText.vue";
-import SettingItemButton from "../../components/SettingItemButton.vue";
 
-const name = "PageProfile";
+const name = "PageLang";
 const components = {
     TitleText,
     NoteText,
-    SettingItemButton,
 };
 </script>
 
 <template>
-    <div id="PageProfile">
-        <TitleText>App 账户</TitleText>
-        <NoteText>咕？还没有这个东东呢！</NoteText>
+    <div id="PageLang">
+        <TitleText>切换语言 - Change Language</TitleText>
+        <NoteText>当前版本的 MCCManager 尚不支持此设置</NoteText>
+        <NoteText>计划于 0.4 版本开启测试</NoteText>
         <br />
-        <TitleText>MCC 实例档案</TitleText>
-        <SettingItemButton disabled>
-            新增档案
-        </SettingItemButton>
-        <NoteText>当前版本的 MCCManager 尚不支持创建与管理 MCC 实例档案</NoteText>
+        <TitleText>异域计划团队 - Localization Project Teams</TitleText>
+        <NoteText>计划于 0.4 版本开启测试，届时将公布加入方式</NoteText>
     </div>
 </template>
 
 <style scoped lang="less">
-div#PageProfile {
+div#PageLang {
     display: flex;
     flex-direction: column;
     justify-content: center;

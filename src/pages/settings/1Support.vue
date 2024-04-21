@@ -39,7 +39,7 @@ div#PageSupport {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 20px;
+    padding: 7px 20px;
     transform: translateY(100px);
     transition: transform 0.2s ease-in-out;
     animation: SettingsSubPageFedein 0.2s ease-in-out forwards;
