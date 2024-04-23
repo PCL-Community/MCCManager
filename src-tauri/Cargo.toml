@@ -1,6 +1,6 @@
 [package]
 name = "mccmanager"
-version = "0.3.6"
+version = "0.3.7"
 description = "Minecraft Console Client Manager"
 authors = ["LingyunAwA"]
 edition = "2021"

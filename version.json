@@ -1,5 +1,5 @@
 {
-    "version": "0.3.6",
+    "version": "0.3.7",
     "channel": ["Canary", "金丝雀通道"],
     "buildTime": "2024.04.23",
     "buildOrder": 1
