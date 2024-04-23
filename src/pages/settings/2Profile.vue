@@ -2,13 +2,6 @@
 import TitleText from "../../components/TitleText.vue";
 import NoteText from "../../components/NoteText.vue";
 import SettingItemButton from "../../components/SettingItemButton.vue";
-
-const name = "PageProfile";
-const components = {
-    TitleText,
-    NoteText,
-    SettingItemButton,
-};
 </script>
 
 <template>

@@ -42,3 +42,6 @@ other/
 
 # 模板文件
 *Template.*
+
+# 升级工具
+update.exe

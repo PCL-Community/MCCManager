@@ -14,20 +14,14 @@ import IconDonate from "../components/icons/IconDonate.vue";
 import router from "../router";
 
 const name = "Home";
-const components = {
-    MenubarButton,
-    MenubarSquareButton,
-    // Icons
-    IconSetting,
-    IconSun,
-    IconMoon,
-    IconTask,
-    IconDonate,
-};
 
 const theme = reactive({
     value: localStorage.getItem("data-7dff8ab4-theme") || 0,
-    text: localStorage.getItem("data-7dff8ab4-theme") == 0 ? "亮色主题" : "暗色主题",
+    text: localStorage.getItem("data-7dff8ab4-theme")
+        ? localStorage.getItem("data-7dff8ab4-theme") == 0
+            ? "亮色主题"
+            : "暗色主题"
+        : "亮色主题",
 });
 
 const handleChangeTheme = () => {
@@ -36,12 +30,12 @@ const handleChangeTheme = () => {
         case 0:
             document.body.removeAttribute("app-theme");
             theme.text = "亮色主题";
-            localStorage.setItem("data-7dff8ab4-theme", 0)
+            localStorage.setItem("data-7dff8ab4-theme", 0);
             break;
         case 1:
             document.body.setAttribute("app-theme", "dark");
             theme.text = "暗色主题";
-            localStorage.setItem("data-7dff8ab4-theme", 1)
+            localStorage.setItem("data-7dff8ab4-theme", 1);
             break;
     }
 };
@@ -76,7 +70,13 @@ const handleChangePage = (page) => {
                             <IconSun
                                 :width="28"
                                 :height="28"
-                                color="var(--title-c)" />
+                                color="var(--title-c)"
+                                v-if="theme.text == '亮色主题'" />
+                            <IconMoon
+                                :width="26"
+                                :height="26"
+                                color="var(--title-c)"
+                                v-else-if="theme.text == '暗色主题'" />
                         </template>
                         <span>{{ theme.text }}</span>
                     </MenubarButton>
@@ -89,7 +89,10 @@ const handleChangePage = (page) => {
                         </template>
                         <span>实例列表</span>
                     </MenubarButton>
-                    <MenubarSquareButton @click="handleOpenUrl('https://afdian.net/@lingyunawa')">
+                    <MenubarSquareButton
+                        @click="
+                            handleOpenUrl('https://afdian.net/@lingyunawa')
+                        ">
                         <IconDonate
                             :width="32"
                             :height="32"

@@ -5,14 +5,6 @@ import AnimationSpan26 from "./AnimationSpan26.vue";
 import LaunchIcon from "./LaunchIcon.vue";
 import IconLaunchFinish from "./icons/IconLaunchFinish.vue";
 import IconLaunchFailed from "./icons/IconLaunchFailed.vue";
-// Stores
-
-const components = {
-    AnimationSpan26,
-    LaunchIcon,
-    IconLaunchFinish,
-    IconLaunchFailed,
-};
 
 const vars = reactive({
     main: "启动 MCC 实例",

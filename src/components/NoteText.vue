@@ -1,5 +1,4 @@
 <script setup>
-const name = "NoteText";
 </script>
 
 <template>

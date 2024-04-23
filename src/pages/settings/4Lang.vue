@@ -1,12 +1,6 @@
 <script setup>
 import TitleText from "../../components/TitleText.vue";
 import NoteText from "../../components/NoteText.vue";
-
-const name = "PageLang";
-const components = {
-    TitleText,
-    NoteText,
-};
 </script>
 
 <template>

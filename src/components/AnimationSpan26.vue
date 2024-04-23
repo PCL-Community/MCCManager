@@ -1,3 +1,20 @@
+<script setup>
+import { onMounted, ref } from "vue";
+
+const props = defineProps({
+    text: String,
+});
+
+const animate = ref(false);
+
+onMounted(() => {
+    animate.value = true;
+    setTimeout(() => {
+        animate.value = false;
+    }, 2000);
+});
+</script>
+
 <template>
     <div class="AnimationSpan">
         <span class="animated-text" ref="textRef">
@@ -22,24 +39,6 @@
         </span>
     </div>
 </template>
-
-<script setup>
-import { onMounted, ref } from "vue";
-
-const name = "AnimationSpan26";
-const props = defineProps({
-    text: String,
-});
-
-const animate = ref(false);
-
-onMounted(() => {
-    animate.value = true;
-    setTimeout(() => {
-        animate.value = false;
-    }, 2000);
-});
-</script>
 
 <style scoped lang="less">
 .AnimationSpan {

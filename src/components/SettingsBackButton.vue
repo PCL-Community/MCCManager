@@ -1,10 +1,5 @@
 <script setup>
 import IconArrowLeft from "./icons/IconArrowLeft.vue";
-
-const name = "SettingsBackButton";
-const components = {
-    IconArrowLeft,
-};
 </script>
 
 <template>

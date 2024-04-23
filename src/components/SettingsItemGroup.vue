@@ -1,5 +1,4 @@
 <script setup>
-const name = "SettingsItemGroup";
 const props = defineProps({
     title: String
 });

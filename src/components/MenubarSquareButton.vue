@@ -1,8 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
 
-const name = "MenubarSquareButton";
-
 const msb = ref(null);
 
 onMounted(() => {

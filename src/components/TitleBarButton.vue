@@ -1,5 +1,4 @@
 <script setup>
-const name = "TitleBarButton";
 const emit = defineEmits(["click"])
 </script>
 

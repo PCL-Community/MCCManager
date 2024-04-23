@@ -1,10 +1,5 @@
 <script setup>
 import IconArrowRight from './icons/IconArrowRight.vue';
-
-const name = "SettingsItemButton";
-const components = {
-    IconArrowRight,
-};
 </script>
 
 <template>

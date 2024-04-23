@@ -4,12 +4,6 @@ import TitleBarButton from "./TitleBarButton.vue";
 import IconClose from "./icons/IconClose.vue";
 import IconMinimize from "./icons/IconMinimize.vue";
 
-const name = "CustomTitleBar";
-const components = {
-    TitleBarButton,
-    IconClose,
-    IconMinimize,
-};
 
 const handleMinimize = () => {
     invoke("minimize");

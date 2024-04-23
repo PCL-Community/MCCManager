@@ -3,13 +3,6 @@
 import NoteText from "../../components/NoteText.vue";
 // Icons
 import IconInfo from "../../components/icons/IconInfo.vue";
-
-const name = "PageSupport";
-const components = {
-    NoteText,
-    // Icons
-    IconInfo,
-};
 </script>
 
 <template>
@@ -43,6 +36,7 @@ div#PageSupport {
     transform: translateY(100px);
     transition: transform 0.2s ease-in-out;
     animation: SettingsSubPageFedein 0.2s ease-in-out forwards;
+    margin-top: 10px;
     &.fadeOut {
         transform: none;
         animation: SettingsSubPageFadeout 0.2s ease-in-out forwards;

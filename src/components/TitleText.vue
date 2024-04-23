@@ -1,5 +1,4 @@
 <script setup>
-const name = "TitleText";
 </script>
 
 <template>

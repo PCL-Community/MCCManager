@@ -1,5 +1,3 @@
-<script setup>
-const name = "SettingItemCard";
-</script>
+<script setup></script>
 
 <template></template>

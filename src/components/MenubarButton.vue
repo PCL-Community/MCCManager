@@ -1,7 +1,3 @@
-<script setup>
-const name = "MenubarButton";
-</script>
-
 <template>
     <div id="MenubarButton">
         <div id="inside">

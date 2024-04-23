@@ -7,16 +7,6 @@ import SettingItemButton from "../../components/SettingItemButton.vue";
 import IconShare from "../../components/icons/IconShare.vue";
 // Modules
 import { handleOpenUrl } from "../../Includes/publicFunc";
-
-const name = "PageDonate";
-const components = {
-    TitleText,
-    LittleText,
-    NoteText,
-    SettingItemButton,
-    // Icon
-    IconShare,
-};
 </script>
 
 <template>

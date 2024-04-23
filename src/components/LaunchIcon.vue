@@ -1,9 +1,3 @@
-<script setup>
-const name = "LaunchIcon"
-const props = defineProps({
-})
-</script>
-
 <template>
     <span class="LaunchIcon">
         <slot></slot>

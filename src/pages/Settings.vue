@@ -2,7 +2,6 @@
 // Modules
 import { reactive } from "vue";
 import router from "../router";
-import packageJson from "../../package.json";
 // Comps
 import SettingsBackButton from "../components/SettingsBackButton.vue";
 import SettingsItemGroup from "../components/SettingsItemGroup.vue";
@@ -20,32 +19,11 @@ import PageSupport from "./settings/1Support.vue";
 import PageProfile from "./settings/2Profile.vue";
 import PageCore from "./settings/3Core.vue";
 import PageLang from "./settings/4Lang.vue";
-// import PageInsider from "./settings/5Insider.vue";
+import PageInsider from "./settings/5Insider.vue";
 import PageDonate from "./settings/6Donate.vue";
-// import PageAbout from "./settings/7About.vue";
-
-const name = "Settings";
-const components = {
-    SettingsBackButton,
-    SettingsItemGroup,
-    SettingsItemButton,
-    // Icons
-    IconInfo,
-    IconProfile,
-    IconCore,
-    IconLang,
-    IconInsider,
-    IconDonate,
-    IconAbout,
-    // SubPages
-    PageSupport,
-    PageProfile,
-    PageCore,
-    // PageLang,
-    // PageInsider,
-    // PageDonate,
-    // PageAbout,
-};
+import PageAbout from "./settings/7About.vue";
+// Version file
+import versionJson from "../../version.json";
 
 const settings = reactive({
     spId: 0,
@@ -74,7 +52,7 @@ const handleChangeSettingPage = (newSpId) => {
                 <div id="sLTitle">
                     <span id="sLTitleMain">MCCManager 本体设置</span>
                     <p id="sLTitleSub">
-                        当前 App 版本为 v{{ packageJson.version }}
+                        当前版本为 {{ versionJson.channel[0] }} v{{ versionJson.version }}
                     </p>
                 </div>
             </div>
@@ -158,9 +136,9 @@ const handleChangeSettingPage = (newSpId) => {
             <PageProfile v-if="settings.spId === 2" :class="settings.sclass" />
             <PageCore v-if="settings.spId === 3" :class="settings.sclass" />
             <PageLang v-if="settings.spId === 4" :class="settings.sclass" />
-            <!-- <PageInsider v-if="settings.spId === 5" :class="settings.sclass" /> -->
+            <PageInsider v-if="settings.spId === 5" :class="settings.sclass" />
             <PageDonate v-if="settings.spId === 6" :class="settings.sclass" />
-            <!-- <PageAbout v-if="settings.spId === 7" :class="settings.sclass" /> -->
+            <PageAbout v-if="settings.spId === 7" :class="settings.sclass" />
         </div>
     </div>
 </template>
@@ -205,7 +183,7 @@ div#Settings {
     div#SettingsMain {
         grid-area: main;
         overflow: hidden;
-        padding-top: 73px;
+        padding-top: 60px;
     }
 }
 </style>
