@@ -1,19 +1,13 @@
 <script setup>
-import TitleText from "../../components/TitleText.vue";
-import NoteText from "../../components/NoteText.vue";
-import SettingItemButton from "../../components/SettingItemButton.vue";
+import Account from "./2sAccount.vue"
+import MCCConfig from "./2sMCC_Config.vue"
 </script>
 
 <template>
     <div id="PageProfile">
-        <TitleText>App 账户</TitleText>
-        <NoteText>咕？还没有这个东东呢！</NoteText>
+        <Account />
         <br />
-        <TitleText>MCC 实例档案</TitleText>
-        <SettingItemButton disabled>
-            新增档案
-        </SettingItemButton>
-        <NoteText>当前版本的 MCCManager 尚不支持创建与管理 MCC 实例档案</NoteText>
+        <MCCConfig />
     </div>
 </template>
 

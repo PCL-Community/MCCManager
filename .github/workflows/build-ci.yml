@@ -7,40 +7,71 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [macos-latest, ubuntu-latest, windows-latest]
+        include:
+          - os: ubuntu-latest
+            rust_target: x86_64-unknown-linux-gnu
+          - os: macos-latest
+            rust_target: universal-apple-darwin
+          - os: windows-latest
+            rust_target: x86_64-pc-windows-msvc
+    runs-on: ${{ matrix.platform }}
     steps:
+      # Init
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+      #
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.11.0'
-        
+          node-version: "20.11.0"
+      #
+      - name: install Rust stable
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      #
+      - name: install dependencies (ubuntu only)
+        if: matrix.platform == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgtk-3-dev webkit2gtk-4.0 libappindicator3-dev librsvg2-dev patchelf
+      #
       - name: Install dependencies
         run: npm install
+      # Init End
+      #
+      # Build App
       - name: Build Tauri App
         run: npm run build
-        
-      - name: "Upload build artifact: Windows Installer (msi)"
+      # Build App End
+      #
+      # Upload Artifact
+      - name: "Upload build artifact: Bundled EXE File"
+        if: matrix.platform == 'windows-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: "MCCManager 0.3.7 Windows"
+          name: Debug File
           path: |
-            D:\a\MCCManager\MCCManager\src-tauri\target\release\bundle\msi\mccmanager_0.3.7_x64_en-US.msi
-            
-      - name: "Upload build artifact: Other Installer (exe)"
-        uses: actions/upload-artifact@v4
+            MCCManager/src-tauri/target/release/mccmanager.exe
+      - name: Upload Artifact (windows only)
+        if: matrix.platform == 'windows-latest'
+        uses: actions/upload-artifact@v3
         with:
-          name: "MCCManager 0.3.7 Other"
-          path: |
-            D:\a\MCCManager\MCCManager\src-tauri\target\release\bundle\nsis\mccmanager_0.3.7_x64-setup.exe
-      - name: "Upload build artifact: Debug exe file"
-        uses: actions/upload-artifact@v4
+          name: MCCManager 1.0 for Windows
+          path: MCCManager/src-tauri/target/release/bundle
+      #
+      - name: Upload Artifact (macos and linux only)
+        if: matrix.platform != 'windows-latest'
+        uses: actions/upload-artifact@v3
         with:
-          name: Debug exe file
-          path: |
-            D:\a\MCCManager\MCCManager\src-tauri\target\release\mccmanager.exe
+          name: MCCManager 1.0 for MacOS/Linux
+          path: MCCManager/src-tauri/target/release/bundle
+      # Upload Artifact End

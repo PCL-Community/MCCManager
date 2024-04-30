@@ -25,13 +25,12 @@ dist-ssr
 
 # 暂时禁用
 src/Includes/MCC.js/
-src/Includes/.gitkeep
 
-# Helping Scripts
+# 快捷脚本
 z*.bat
 
 # Other files
-other/
+other/*
 
 # TS Files (Ingore because this project is based on JS)
 *.d.ts
@@ -43,5 +42,5 @@ other/
 # 模板文件
 *Template.*
 
-# 升级工具
-update.exe
+# 应用配置等
+app/

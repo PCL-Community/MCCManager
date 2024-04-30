@@ -1,22 +1,11 @@
 <script setup>
-import { nextTick, ref, watch } from "vue";
+import { ref } from "vue";
 import { RouterView } from "vue-router";
 // Comps
 import CustomTitleBar from "./components/CustomTitleBar.vue";
 import LaunchButton from "./components/LaunchButton.vue";
-// Stores
-
-const components = {
-    CustomTitleBar,
-    LaunchButton,
-};
 
 const main = ref(null);
-
-const hrefMap = {
-    0: "/",
-    1: "Settings",
-};
 </script>
 
 <template>

@@ -48,10 +48,10 @@ router.beforeEach((to, from, next) => {
     }
     setTimeout(() => {
         if (enlargeList.includes(to.fullPath)) {
-            invoke("enlargewindow");
+            invoke("enlarge_window");
         }
         if (enlargeList.includes(from.fullPath)) {
-            invoke("shrinkwindow");
+            invoke("shrink_window");
         }
     }, 100);
     setTimeout(() => {

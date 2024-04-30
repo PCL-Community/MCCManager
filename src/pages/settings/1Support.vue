@@ -1,5 +1,6 @@
 <script setup>
 // Comps
+import { ref } from "vue";
 import NoteText from "../../components/NoteText.vue";
 // Icons
 import IconInfo from "../../components/icons/IconInfo.vue";

@@ -18,6 +18,9 @@
             },
             "window": {
                 "startDragging": true
+            },
+            "fs": {
+                "all": false
             }
         },
         "windows": [

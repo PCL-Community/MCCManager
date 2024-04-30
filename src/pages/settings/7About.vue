@@ -26,7 +26,7 @@ if (yearNow == 2024) {
         <LittleText>版本号：{{ versionJson.version }}</LittleText>
         <LittleText>
             构建通道：{{ versionJson.channel[0] }} -
-            {{ versionJson.channel[1] }}
+            {{ versionJson.channel[1] }}通道
         </LittleText>
         <LittleText>
             构建日期和序号：{{ versionJson.buildTime }} #{{
