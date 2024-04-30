@@ -63,14 +63,14 @@ jobs:
             MCCManager/src-tauri/target/release/mccmanager.exe
       - name: Upload Artifact (windows only)
         if: matrix.platform == 'windows-latest'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: MCCManager 1.0 for Windows
           path: MCCManager/src-tauri/target/release/bundle
       #
       - name: Upload Artifact (macos and linux only)
         if: matrix.platform != 'windows-latest'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: MCCManager 1.0 for MacOS/Linux
           path: MCCManager/src-tauri/target/release/bundle
