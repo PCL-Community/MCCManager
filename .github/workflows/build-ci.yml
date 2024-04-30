@@ -77,7 +77,7 @@ jobs:
         if: matrix.platform == 'macos-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: MCCManager 1.0
+          name: MCCManager 1.0 MacOS app File
           path: |
             /Users/runner/work/MCCManager/MCCManager/src-tauri/target/release/bundle/macos/mccmanager.app
       #
@@ -85,7 +85,7 @@ jobs:
         if: matrix.platform == 'macos-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: MCCManager 1.0
+          name: MCCManager 1.0 MacOS dmg File
           path: |
             /Users/runner/work/MCCManager/MCCManager/src-tauri/target/release/bundle/dmg/mccmanager_1.0.0_aarch64.dmg
       #
@@ -93,7 +93,7 @@ jobs:
         if: matrix.platform == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: MCCManager 1.0
+          name: MCCManager 1.0 Linux deb File
           path: |
             /home/runner/work/MCCManager/MCCManager/src-tauri/target/release/bundle/deb/mccmanager_1.0.0_amd64.deb
       #
@@ -101,6 +101,6 @@ jobs:
         if: matrix.platform == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: MCCManager 1.0
+          name: MCCManager 1.0 Linux AppImage File
           path: |
             /home/runner/work/MCCManager/MCCManager/src-tauri/target/release/bundle/appimage/mccmanager_1.0.0_amd64.AppImage
