@@ -32,7 +32,7 @@ jobs:
           - os: windows-latest
             rust_target: x86_64-pc-windows-msvc
     runs-on: ${{ matrix.platform }}
-    needs: [check_commit_message]
+    needs: [check_is_skiped_push]
     steps:
       - name: "[Setup | All] Checkout repository"
         uses: actions/checkout@v4
