@@ -10,15 +10,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  check_is_skiped_push:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check commit message
-        run: |
-          if [[ $(git log --format=%B -n 1 ${{ github.sha }}) == *'[skin ci]'* ]]; then
-            echo "Commit message contains '[skin ci]'. Skipping workflow."
-            exit 78 # Exit code 78 indicates a neutral status, which skips the workflow
-          fi
   build:
     strategy:
       fail-fast: false
@@ -32,7 +23,6 @@ jobs:
           - os: windows-latest
             rust_target: x86_64-pc-windows-msvc
     runs-on: ${{ matrix.platform }}
-    needs: [check_is_skiped_push]
     steps:
       - name: "[Setup | All] Checkout repository"
         uses: actions/checkout@v4
@@ -41,11 +31,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20.11.0"
-      #
-      # - name: "[Setup | All] Install Rust stable"
-      #   uses: actions-rs/toolchain@v1
-      #   with:
-      #     toolchain: stable
       #
       - name: "[Setup | Ubuntu] Install Dependencies"
         if: matrix.platform == 'ubuntu-latest'
