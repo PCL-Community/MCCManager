@@ -18,3 +18,4 @@
 ## 开源协议 ⚖️
 
 本应用以 [GPL-3.0 开源协议](https://github.com/Yuns-Lab/MCCManager/blob/main/LICENSE) 开源
+存放于 [PCL-Community](https://github.com/PCL-Community) 组织中，实际版权由 [凌云（JingHai-Lingyun）](https://github.com/JingHai-Lingyun)持有
