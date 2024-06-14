@@ -4,11 +4,10 @@
 
 # Minecraft Console Client Manager (MCCManager)
 
-</div>
-
 ## **简介 ℹ️**
 
-**Minecraft Console Client Manager (MCCManager)** 是一个通过 GUI 界面，快速管理 [Minecraft Console Client (MCC)](https://github.com/MCCTeam/Minecraft-Console-Client/) 实例和其配置的一个社区开发的应用
+**Minecraft Console Client Manager (MCCManager)** 是一个通过 GUI 界面，\
+快速管理 [Minecraft Console Client (MCC)](https://github.com/MCCTeam/Minecraft-Console-Client/) 实例和其配置的一个社区开发的应用
 
 ## 下载 🔰
 
@@ -17,5 +16,6 @@
 
 ## 开源协议 ⚖️
 
-本应用以 [GPL-3.0 开源协议](https://github.com/PCL-Community/MCCManager/blob/main/LICENSE) 开源\
-存放于 [PCL-Community](https://github.com/PCL-Community) 组织中，实际版权由 [凌云（JingHai-Lingyun）](https://github.com/JingHai-Lingyun)持有
+本应用以 [GPL-3.0 开源协议](https://github.com/Yuns-Lab/MCCManager/blob/main/LICENSE) 开源
+
+</div>
